@@ -429,16 +429,26 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Marquee Notice */}
-      <div className="bg-primary text-white py-1.5 px-4 overflow-hidden">
-        <div className="flex items-center">
-          <span className="bg-white text-primary px-2 py-0.5 rounded text-xs font-semibold mr-3 flex-shrink-0">
-            জরুরি নোটিশ
+      {/* Marquee Notice with Bell Icon */}
+      <div className="bg-primary text-white py-2 px-4 overflow-hidden">
+        <div className="flex items-center gap-3">
+          <span className="flex items-center justify-center text-primary bg-white p-1.5 rounded-full flex-shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+            </svg>
           </span>
           <div className="flex-1 overflow-hidden">
             <div className="animate-marquee whitespace-nowrap">
               {emergencyNotices.map((notice, index) => (
-                <span key={index} className="text-sm mr-8">
+                <span
+                  key={index}
+                  className="text-sm font-medium mr-8 inline-block"
+                >
                   {notice}
                 </span>
               ))}
